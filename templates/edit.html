@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Edit Client Data</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: black;
+        margin: 0;
+        padding: 0;
+        color: white;
+      }
+
+      h1 {
+        text-align: center;
+        margin: 20px 0;
+        color: #333;
+      }
+
+      form {
+        max-width: 400px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        color: #333;
+        font-weight: bold;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="date"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+
+      input[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Edit Client Data</h1>
+
+    <form method="POST" action="/update/{{ client_id }}">
+      <!-- Add HTML form fields for editing client data -->
+      <label for="name">Name:</label>
+      <input
+        type="text"
+        name="name"
+        value="{{ client['Name'] }}"
+        required
+      /><br /><br />
+
+      <label for="contact">Contact Number:</label>
+      <input
+        type="text"
+        name="contact"
+        value="{{ client['Contact Number'] }}"
+        required
+      /><br /><br />
+
+      <label for="city">City:</label>
+      <input
+        type="text"
+        name="city"
+        value="{{ client['City'] }}"
+        required
+      /><br /><br />
+
+      <label for="country">Country:</label>
+      <input
+        type="text"
+        name="country"
+        value="{{ client['Country'] }}"
+        required
+      /><br /><br />
+
+      <label for="payg">Payg:</label>
+      <input
+        type="text"
+        name="payg"
+        value="{{ client['Payg'] }}"
+        required
+      /><br /><br />
+
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        name="email"
+        value="{{ client['Email'] }}"
+        required
+      /><br /><br />
+
+      <label for="notice_period">Notice Period:</label>
+      <input
+        type="text"
+        name="notice_period"
+        value="{{ client['Notice Period'] }}"
+        required
+      /><br /><br />
+
+      <label for="relocation">Relocation:</label>
+      <input
+        type="text"
+        name="relocation"
+        value="{{ client['Relocation'] }}"
+        required
+      /><br /><br />
+
+      <label for="date_of_joining">Date of Joining:</label>
+      <input
+        type="date"
+        name="date_of_joining"
+        value="{{ client['Date of Joining'] }}"
+        required
+      /><br /><br />
+
+      <label for="reminder_of_joining">Reminder of Joining:</label>
+      <input
+        type="date"
+        name="reminder_of_joining"
+        value="{{ client['Reminder of Joining'] }}"
+        required
+      /><br /><br />
+
+      <label for="expertise">Expertise:</label>
+      <input
+        type="text"
+        name="expertise"
+        value="{{ client['Expertise'] }}"
+        required
+      /><br /><br />
+
+      <label for="experience">Experience (in years):</label>
+      <input
+        type="text"
+        name="experience"
+        value="{{ client['Experience'] }}"
+        required
+      /><br /><br />
+
+      <input type="submit" value="Update Client" />
+    </form>
+  </body>
+</html>

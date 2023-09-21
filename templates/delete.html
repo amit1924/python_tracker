@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Delete Client Data</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: black;
+        margin: 0;
+        padding: 0;
+        color: white;
+      }
+
+      h1 {
+        text-align: center;
+        margin: 20px 0;
+        color: #333;
+      }
+
+      form {
+        max-width: 400px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        color: #333;
+        font-weight: bold;
+      }
+
+      input[type="submit"] {
+        background-color: #ff4500;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #ff0000;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Delete Client Data</h1>
+
+    <form method="POST" action="/delete/{{ client_id }}">
+      <!-- Display client information for confirmation -->
+      <p>
+        Are you sure you want to delete the client data for:
+        <strong>{{ client['Name'] }}</strong>?
+      </p>
+
+      <input type="submit" value="Delete Client" />
+    </form>
+  </body>
+</html>
